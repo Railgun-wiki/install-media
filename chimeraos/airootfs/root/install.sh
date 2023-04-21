@@ -20,21 +20,21 @@ fi
 #### Test conenction or ask the user for configuration ####
 
 # Waiting a bit because some wifi chips are slow to scan 5GHZ networks
-sleep 2
+#sleep 2
 
-while ! ( curl -Ls https://github.com | grep '<html' > /dev/null ); do
-    whiptail \
-     "No internet connection detected.\n\nPlease use the network configuration tool to activate a network, then select \"Quit\" to exit the tool and continue the installation." \
-     12 50 \
-     --yesno \
-     --yes-button "Configure" \
-     --no-button "Exit"
-
-    if [ $? -ne 1 ]; then
-         nmtui-connect
-    fi
-    
-done
+#while ! ( curl -Ls https://github.com | grep '<html' > /dev/null ); do
+#    whiptail \
+#     "No internet connection detected.\n\nPlease use the network configuration tool to activate a network, then select \"Quit\" to exit the tool and continue the installation." \
+#     12 50 \
+#     --yesno \
+#     --yes-button "Configure" \
+#     --no-button "Exit"
+#
+#    if [ $? -ne 1 ]; then
+#         nmtui-connect
+#    fi
+#    
+#done
 #######################################
 
 if ! frzr-bootstrap gamer; then
