@@ -30,11 +30,10 @@ while ! ( curl -Ls https://github.com | grep '<html' > /dev/null ); do
      --yes-button "Configure" \
      --no-button "Exit"
 
-    if [ $? -ne 0 ]; then
-         exit 1
+    if [ $? -ne 1 ]; then
+         nmtui-connect
     fi
-
-    nmtui-connect
+    
 done
 #######################################
 
